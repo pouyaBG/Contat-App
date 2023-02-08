@@ -3,7 +3,7 @@ const { colors: defaultColors } = require("tailwindcss/defaultTheme");
 const colors = {
   ...defaultColors,
   ...{
-    "text_color": "#EDAE0A",
+    "text_color": "#d8e7f2",
     "button_color": "#F66B0E",
   },
 };

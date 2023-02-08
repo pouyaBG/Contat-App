@@ -1,5 +1,20 @@
 .App {
-  background: #f6f6f6;
+  background-image: linear-gradient(
+    to right bottom,
+    #7697a3,
+    #5d8091,
+    #466980,
+    #31536f,
+    #1f3d5d,
+    #183353,
+    #11294a,
+    #0a1f40,
+    #091d3d,
+    #071c3b,
+    #061a38,
+    #051936
+  );
+  color: #d8e7f2;
   width: 100vw;
   height: 100vh;
 }
