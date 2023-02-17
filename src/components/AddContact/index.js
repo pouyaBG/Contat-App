@@ -1,18 +1,24 @@
 import { useState } from "react";
 
-const AddContact = () => {
+const AddContact = ({ addConatctHandler }) => {
   // state
-  const [contact, setcontact] = useState({ name: "", email: "" });
+  const [contact, setContact] = useState({ name: "", email: "" });
   // handler
   const changeHandlert = (e) => {
-    setcontact({ ...contact, [e.target.name]: e.target.value });
+    setContact({ ...contact, [e.target.name]: e.target.value });
   };
-  const addConatctHandler = (e) => {
+  const sumbitForm = (e) => {
+    if (!contact.name || !contact.email) {
+      alert("oh please fill your name and email");
+      return;
+    }
     e.preventDefault();
+    addConatctHandler(contact);
+    setContact({ name: "", email: "" });
   };
   return (
     <>
-      <form className="w-full flex justify-center" onSubmit={addConatctHandler}>
+      <form className="w-full flex justify-center" onSubmit={sumbitForm}>
         <div>
           <div className="flex flex-col">
             <label className="label">
@@ -26,7 +32,7 @@ const AddContact = () => {
               defaultValue={contact.name}
               onChange={changeHandlert}
               placeholder="Enter contact's name"
-              className="input input-bordered w-full rounded-md max-w-md p-2 m-2.5 shadow-sm"
+              className="input input-bordered w-full rounded-md max-w-md p-2 m-2.5 shadow-sm text-font_color"
             />
           </div>
           <div>
@@ -41,7 +47,7 @@ const AddContact = () => {
               defaultValue={contact.email}
               onChange={changeHandlert}
               placeholder="Enter contact's email"
-              className="input input-bordered w-full max-w-md rounded-md p-2 m-2.5 shadow-md"
+              className="input input-bordered w-full max-w-md rounded-md p-2 m-2.5 shadow-md  text-font_color"
             />
           </div>
           <button
@@ -54,7 +60,7 @@ const AddContact = () => {
               width="20"
               height="20"
               fill="currentColor"
-              class="bi bi-plus"
+              className="bi bi-plus"
               viewBox="0 0 14 14"
             >
               <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
