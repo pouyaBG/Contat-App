@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const AddContact = ({ addConatctHandler }) => {
+const AddContact = ({ addContactHandler }) => {
   // state
   const [contact, setContact] = useState({ name: "", email: "" });
   // handler
@@ -13,9 +13,11 @@ const AddContact = ({ addConatctHandler }) => {
       return;
     }
     e.preventDefault();
-    addConatctHandler(contact);
     setContact({ name: "", email: "" });
+    addContactHandler(contact);
+    console.log(contact);
   };
+
   return (
     <>
       <form className="w-full flex justify-center" onSubmit={sumbitForm}>

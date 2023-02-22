@@ -5,7 +5,8 @@ const colors = {
   ...{
     "text_color": "#d8e7f2",
     "button_color": "#F66B0E",
-    "font_color": "#000000	"
+    "font_color": "#000000",
+    "delete_color": "#b70805"
   },
 };
 
